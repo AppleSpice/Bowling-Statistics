@@ -24,5 +24,23 @@ namespace Bowling_Statistics
         {
             InitializeComponent();
         }
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Submit.SubmitBtn();
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            Clear.ClearBtn();
+            
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+       
     }
 }
