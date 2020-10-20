@@ -26,7 +26,49 @@ namespace Bowling_Statistics
             InitializeComponent();
         }
 
-        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        public void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            submit();
+        }
+                
+
+        public void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            clear();
+        }
+
+        public void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            exit();
+        }
+
+
+
+
+
+
+
+
+        public void MaleRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            if (FemaleRadio.IsChecked == true)
+            {
+                FemaleRadio.IsChecked = false;
+            }
+        }
+
+        public void FemaleRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            if (MaleRadio.IsChecked == true)
+            {
+                MaleRadio.IsChecked = false;
+            }
+        }
+        public void exit()
+        {
+            Environment.Exit(0);
+        }
+        public void submit()
         {
             //For Total
             double total = 0;
@@ -43,8 +85,14 @@ namespace Bowling_Statistics
             handicap = (200 - average) * 0.8;
             HandiCapBox.Text = "Handicap: " + Convert.ToString(handicap);
 
+            HighGame();
+
+        }
+
+        public void HighGame()
+        {
             //For High Game
-            if(Game1Box.Text == Game2Box.Text)
+            if (Game1Box.Text == Game2Box.Text)
             {
                 HighGameBox.Text = "High Game: Tie";
             }
@@ -79,9 +127,8 @@ namespace Bowling_Statistics
                 }
             }
         }
-                
 
-        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        public void clear()
         {
             NameBox.Text = "Name";
             Game1Box.Text = "0";
@@ -101,27 +148,6 @@ namespace Bowling_Statistics
             if (FemaleRadio.IsChecked == true)
             {
                 FemaleRadio.IsChecked = false;
-            }
-        }
-
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
-        private void MaleRadio_Checked(object sender, RoutedEventArgs e)
-        {
-            if (FemaleRadio.IsChecked == true)
-            {
-                FemaleRadio.IsChecked = false;
-            }
-        }
-
-        private void FemaleRadio_Checked(object sender, RoutedEventArgs e)
-        {
-            if (MaleRadio.IsChecked == true)
-            {
-                MaleRadio.IsChecked = false;
             }
         }
     }
