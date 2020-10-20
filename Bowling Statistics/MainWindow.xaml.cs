@@ -92,6 +92,16 @@ namespace Bowling_Statistics
             AverageBox.Text = "Average:";
             HandiCapBox.Text = "Handicap:";
             HighGameBox.Text = "High Game:";
+
+            if (MaleRadio.IsChecked == true)
+            {
+                MaleRadio.IsChecked = false;
+            }
+
+            if (FemaleRadio.IsChecked == true)
+            {
+                FemaleRadio.IsChecked = false;
+            }
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -99,5 +109,20 @@ namespace Bowling_Statistics
             Environment.Exit(0);
         }
 
+        private void MaleRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            if (FemaleRadio.IsChecked == true)
+            {
+                FemaleRadio.IsChecked = false;
+            }
+        }
+
+        private void FemaleRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            if (MaleRadio.IsChecked == true)
+            {
+                MaleRadio.IsChecked = false;
+            }
+        }
     }
 }
