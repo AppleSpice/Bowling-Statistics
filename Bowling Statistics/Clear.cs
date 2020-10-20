@@ -19,7 +19,7 @@ namespace Bowling_Statistics
     {
         public static void ClearBtn()
         {
-            NameBox.Text = "";
+            
         }
     }
 }
